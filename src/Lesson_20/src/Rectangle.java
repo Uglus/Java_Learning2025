@@ -23,10 +23,19 @@ public class Rectangle {
                 + sideA + ", " + sideB);
     }
 
+    private boolean isSquare() {
+        return sideA==sideB;
+    }
+
+    private double getArea() {
+        return sideA*sideB;
+    }
+
     public void show() {
-        System.out.println(
+        System.out.println("IsSqaure: " + isSquare() + "\n" +
+                "Area: " + getArea() + "\n"+
                 "SideA: " + sideA + "\n" +
-                        "SideB: " + sideB
+                "SideB: " + sideB
         );
     }
 
