@@ -1,4 +1,7 @@
-package Lesson_26.src;
+package Lesson_26.src.Employee;
+
+import Lesson_26.src.Task;
+import Lesson_26.src.TaskProgressCallback;
 
 public class Tester extends Employee{
 
@@ -13,12 +16,5 @@ public class Tester extends Employee{
                 Task.Status.DONE,
                 task
         );
-    }
-
-    @Override
-    protected String getDetailsAboutProcess(Task task) {
-        return "Task has: Id:"+task.getId()+", Description:"+task.getDescription()+
-                ", DesignLink:"+task.getDesignLink()+", Testcase:"+task.getTestcase() +
-                ", BuildLink:"+task.getBuildLink();
     }
 }

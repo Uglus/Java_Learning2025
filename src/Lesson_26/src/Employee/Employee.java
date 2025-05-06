@@ -1,4 +1,7 @@
-package Lesson_26.src;
+package Lesson_26.src.Employee;
+
+import Lesson_26.src.Task;
+import Lesson_26.src.TaskProgressCallback;
 
 public abstract class Employee {
     private final String name;
@@ -25,5 +28,7 @@ public abstract class Employee {
     }
 
     protected abstract Task getTaskWhenDone(Task task);
-    protected abstract String getDetailsAboutProcess(Task task);
+    protected String getDetailsAboutProcess(Task task) {
+        return "Task has: "+task.toString();
+    }
 }

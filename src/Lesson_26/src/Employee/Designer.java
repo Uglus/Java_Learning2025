@@ -1,4 +1,7 @@
-package Lesson_26.src;
+package Lesson_26.src.Employee;
+
+import Lesson_26.src.Task;
+import Lesson_26.src.TaskProgressCallback;
 
 public abstract class Designer extends Employee{
     protected Designer(String name, TaskProgressCallback callback) {
@@ -13,11 +16,6 @@ public abstract class Designer extends Employee{
                 createTestCase(task.getDescription()),
                 task
         );
-    }
-
-    @Override
-    protected String getDetailsAboutProcess(Task task) {
-        return "Task has: TaskId: " + task.getId() + ", Description: " + task.getDescription();
     }
 
     private String createDesignLinkForTask(int taskId){

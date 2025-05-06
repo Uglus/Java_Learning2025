@@ -1,4 +1,7 @@
-package Lesson_26.src;
+package Lesson_26.src.Employee;
+
+import Lesson_26.src.Task;
+import Lesson_26.src.TaskProgressCallback;
 
 public class Programmer extends Employee{
 
@@ -17,12 +20,6 @@ public class Programmer extends Employee{
 
     private String createBuildLink(int id) {
         return "https://project/build_link_for_task_"+id;
-    }
-
-    @Override
-    protected String getDetailsAboutProcess(Task task) {
-        return "Task has: Id:"+task.getId()+", Description:"+task.getDescription()+
-                ", DesignLink:"+task.getDesignLink()+", Testcase:"+task.getTestcase();
     }
 
 }

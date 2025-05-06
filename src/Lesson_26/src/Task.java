@@ -1,5 +1,7 @@
 package Lesson_26.src;
 
+import java.util.Objects;
+
 public class Task {
     private final int id;
     private final Task.Status status;
@@ -72,5 +74,18 @@ public class Task {
 
     public enum Status {
         ASSEMBLING_REQUIREMENTS, READY_TO_DO, IN_PROGRESS, READY_FOR_TESTING, DONE
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("Id:"+id+", Description:"+description+", Status: "+status);
+        if(!Objects.equals(designLink, ""))
+            result.append(", DesignLink:").append(designLink);
+        if(!Objects.equals(testcase, ""))
+            result.append(", Testcase:").append(testcase);
+        if(!Objects.equals(buildLink, ""))
+            result.append(", BuildLink:").append(buildLink);
+
+        return result.toString();
     }
 }
