@@ -1,4 +1,4 @@
-package Lesson_25.src;
+package Lesson_25.src.MyData;
 
 public class MyData {
     private final int id;

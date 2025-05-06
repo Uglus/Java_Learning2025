@@ -1,21 +1,21 @@
-package Lesson_25.src;
+package Lesson_25.src.Repository;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CachedDataSource implements MutableDataSource{
+public class CachedDataSource<T> implements MutableDataSource<T>{
 
-    private MyData myData;
+    private T myData;
 
     @Nullable
     @Override
-    public MyData getData() {
+    public T getData() {
         System.out.println("Get data from cache");
         return myData;
     }
 
     @Override
-    public void saveData(@NotNull MyData data) {
+    public void saveData(@NotNull T data) {
         System.out.println("Save data to cache");
         myData = data;
     }

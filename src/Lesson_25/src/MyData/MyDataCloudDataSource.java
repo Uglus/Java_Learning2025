@@ -1,9 +1,9 @@
-package Lesson_25.src;
+package Lesson_25.src.MyData;
 
-import org.jetbrains.annotations.NotNull;
+import Lesson_25.src.Repository.DataSource;
 import org.jetbrains.annotations.Nullable;
 
-public class CloudDataSource implements DataSource{
+public class MyDataCloudDataSource implements DataSource<MyData> {
 
     @Nullable
     @Override
