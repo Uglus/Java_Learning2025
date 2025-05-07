@@ -1,9 +1,10 @@
 package Lesson_26.src.Employee;
 
 import Lesson_26.src.Task;
+import Lesson_26.src.TaskHandler;
 import Lesson_26.src.TaskProgressCallback;
 
-public abstract class Employee {
+public abstract class Employee implements TaskHandler {
     private final String name;
     private final Task.Status responsibleForTaskStatus;
     private final TaskProgressCallback callback;
@@ -15,12 +16,23 @@ public abstract class Employee {
         this.callback = callback;
     }
 
-    public void doTask(Task task){
-        System.out.println(getClass().getSimpleName() + " " + name +
-                " started working for task: " + getDetailsAboutProcess(task));
-        System.out.println(getClass().getSimpleName() + " " + name +
-                " working for task: " + getDetailsAboutProcess(task) + " ... ");
-        callback.updateTask(task);
+    public boolean doTask(Task task){
+        boolean canHandle = canHandleTask(task);
+        if(canHandle) {
+            System.out.println(getClass().getSimpleName() + " " + name +
+                    " started working for task: " + getDetailsAboutProcess(task));
+            System.out.println(getClass().getSimpleName() + " " + name +
+                    " working for task: " + getDetailsAboutProcess(task) + " ... ");
+
+            callback.updateTask(getTaskWhenDone(task));
+            System.out.println(getClass().getSimpleName() + " " + name +
+                    " finished working for task: " + getDetailsAboutProcess(task) + " !");
+        }
+        return canHandle;
+    }
+
+    public boolean canHandleTask(Task task) {
+        return responsibleForTaskStatus == task.getStatus();
     }
 
     public Task.Status getResponsibleForTaskStatus(){

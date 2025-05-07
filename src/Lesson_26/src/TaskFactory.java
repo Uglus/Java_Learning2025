@@ -6,8 +6,8 @@ public class TaskFactory {
     private static final int SIZE = 10;
     private final Task[] tasks;
 
-    public TaskFactory(Task[] tasks) {
-        this.tasks = tasks;
+    public TaskFactory() {
+        this.tasks = new Task[SIZE];
         for(int i = 0; i<SIZE;i++){
             tasks[i] = new Task(
                     i,Task.Status.ASSEMBLING_REQUIREMENTS,

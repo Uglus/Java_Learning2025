@@ -46,8 +46,6 @@ public class Task {
         this.testcase = oldTask.testcase;
     }
 
-
-
     public int getId() {
         return id;
     }

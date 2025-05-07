@@ -1,10 +1,11 @@
 package Lesson_26.src.Employee;
 
 import Lesson_26.src.Task;
+import Lesson_26.src.TaskHandler;
 import Lesson_26.src.TaskProgressCallback;
 
-public abstract class Designer extends Employee{
-    protected Designer(String name, TaskProgressCallback callback) {
+public class Designer extends Employee implements TaskHandler {
+    public Designer(String name, TaskProgressCallback callback) {
         super(name, Task.Status.ASSEMBLING_REQUIREMENTS, callback);
     }
 
