@@ -13,11 +13,11 @@ public class EmployeeChain implements TaskHandler {
     }
 
     public boolean doTask(Task task) {
-        boolean result = false;
-        result = handlerFirst.doTask(task);
-        if(!result)
-            result = handlerSecond.doTask(task);
-        return result;
+        boolean canHandlerDoTask = false;
+        canHandlerDoTask = handlerFirst.doTask(task); // false - зада
+        if(!canHandlerDoTask)
+            canHandlerDoTask = handlerSecond.doTask(task);
+        return canHandlerDoTask;
     }
 
 }

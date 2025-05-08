@@ -17,8 +17,8 @@ public abstract class Employee implements TaskHandler {
     }
 
     public boolean doTask(Task task){
-        boolean canHandle = canHandleTask(task);
-        if(canHandle) {
+        boolean canHandleTask = canHandleTask(task);
+        if(canHandleTask) {
             System.out.println(getClass().getSimpleName() + " " + name +
                     " started working for task: " + getDetailsAboutProcess(task));
             System.out.println(getClass().getSimpleName() + " " + name +
@@ -28,15 +28,11 @@ public abstract class Employee implements TaskHandler {
             System.out.println(getClass().getSimpleName() + " " + name +
                     " finished working for task: " + getDetailsAboutProcess(task) + " !");
         }
-        return canHandle;
+        return canHandleTask;
     }
 
     public boolean canHandleTask(Task task) {
         return responsibleForTaskStatus == task.getStatus();
-    }
-
-    public Task.Status getResponsibleForTaskStatus(){
-        return responsibleForTaskStatus;
     }
 
     protected abstract Task getTaskWhenDone(Task task);
