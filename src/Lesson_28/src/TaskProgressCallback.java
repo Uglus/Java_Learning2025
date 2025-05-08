@@ -2,6 +2,6 @@ package Lesson_28.src;
 
 public interface TaskProgressCallback {
 
-    public void updateTask(Task task);
+    public void updateTasks(Task oldTask, Task newTask);
 
 }

@@ -78,6 +78,6 @@ public class Task {
     }
 
     public enum Status {
-        ASSEMBLING_REQUIREMENTS, READY_TO_DO, IN_PROGRESS, READY_FOR_TESTING, DONE
+        ASSEMBLING_REQUIREMENTS, READY_TO_DO, READY_FOR_TESTING, DONE
     }
 }

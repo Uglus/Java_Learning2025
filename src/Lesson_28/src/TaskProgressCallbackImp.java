@@ -1,6 +1,6 @@
 package Lesson_28.src;
 
-public class TaskProgressCallbackImp implements TaskProgressCallback{
+public  class TaskProgressCallbackImp implements TaskProgressCallback{
     private final TaskFactory factory;
 
     public TaskProgressCallbackImp(TaskFactory factory) {
@@ -8,7 +8,7 @@ public class TaskProgressCallbackImp implements TaskProgressCallback{
     }
 
     @Override
-    public void updateTask(Task task) {
-        factory.updateTask(task);
+    public void updateTasks(Task oldTask, Task newTask) {
+        factory.updateTasks(oldTask, newTask);
     }
 }
